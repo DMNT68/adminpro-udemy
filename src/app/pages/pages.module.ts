@@ -18,6 +18,7 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 // temporal
 import { IncremetadorComponent } from '../components/incremetador/incremetador.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { AccountSettingComponent } from './account-setting/account-setting.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
         ProgressComponent,
         Graficas1Component,
         IncremetadorComponent,
-        GraficoDonaComponent
+        GraficoDonaComponent,
+        AccountSettingComponent
     ],
     exports: [
         PagesComponent,
