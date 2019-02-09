@@ -18,6 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Services
 import { ServiceModule } from './services/service.module';
 
+// Pipe Module
+import { PipesModule } from './pipes/pipes.module';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { ServiceModule } from './services/service.module';
     PagesModules,
     FormsModule,
     ReactiveFormsModule,
-    ServiceModule
+    ServiceModule,
+    PipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
