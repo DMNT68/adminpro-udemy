@@ -9,14 +9,15 @@ export class ImagenPipe implements PipeTransform {
   transform(img: string, tipo: string = 'usuario' ): any {
 
   let url = URL_SERVICIOS + '/img';
+  
+  if (!img) {
+    return url + '/qwerty/asdf';
+  }
 
   if (img.indexOf('https') >= 0 ) {
     return img;
   }
 
-  if (!img) {
-    return url + '/qwerty/asdf';
-  }
 
   switch (tipo) {
     case 'usuario':
