@@ -132,6 +132,7 @@ export class UsuarioService {
 
 
   cambiarImagen(archivo: File , id: string) {
+
     this._subirArchivoServices.subirArhivo(archivo, 'usuarios', id)
     .then((resp: any) => {
       this.usuario.img = resp.usuario.img;
@@ -141,6 +142,7 @@ export class UsuarioService {
     .catch(resp => {
       console.log(resp);
     });
+    
   }
 
 
@@ -150,6 +152,7 @@ export class UsuarioService {
   }
 
   buscarUsuarios(termino: string) {
+
     let url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/' + termino;
     return this.http.get(url).pipe(map((resp: any) => resp.usuarios));
 
