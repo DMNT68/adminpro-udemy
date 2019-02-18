@@ -72,7 +72,7 @@ export class MedicoComponent implements OnInit {
      .subscribe(medico => {
        this.medico = medico;
        this.medico.hospital = medico.hospital._id;
-       this.cambioHospital(this.medico.hospital)
+       this.cambioHospital(this.medico.hospital);
       });
 
   }

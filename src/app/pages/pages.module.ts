@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 
 
 import { CommonModule } from '@angular/common';
-import { SharedModules } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 // ng2-charts
 import { ChartsModule } from 'ng2-charts';
@@ -36,7 +36,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
     declarations: [
-        PagesComponent,
+        // PagesComponent,
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
@@ -47,21 +47,21 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalUploadComponent,
+        // ModalUploadComponent,
         HospitalesComponent,
         MedicosComponent,
         MedicoComponent,
         BusquedaComponent
     ],
     exports: [
-        PagesComponent,
+        // PagesComponent,
         DashboardComponent,
         ProgressComponent,
         Graficas1Component
     ],
     imports: [
         CommonModule,
-        SharedModules,
+        SharedModule,
         PAGES_ROUTES,
         FormsModule,
         ChartsModule,

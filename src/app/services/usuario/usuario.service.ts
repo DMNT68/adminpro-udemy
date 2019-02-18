@@ -8,10 +8,10 @@ import { Usuario } from '../../models/usuario.model';
 import { URL_SERVICIOS } from '../../config/config';
 
 import { map, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 import Swal from 'sweetalert2';
 import { SubirArchivoService } from '../subirArchivo/subir-archivo.service';
-import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +25,28 @@ export class UsuarioService {
   constructor(public http: HttpClient, public router: Router, public _subirArchivoServices: SubirArchivoService) { 
     // console.log('Servicio de usuario listo');
     this.cargaStorage();
+  }
+
+  renuevaToken() {
+
+    let url = URL_SERVICIOS + '/login/renuevaToken';
+    url += '?token=' + this.token;
+
+    return this.http.get(url)
+    .pipe(map((resp: any) => {
+
+      this.token = resp.token;
+      localStorage.setItem('token', this.token);
+
+      return true;
+    }),
+    catchError(err => {
+      this.router.navigate(['/login']);
+      Swal.fire('No se pudo renovar token', 'No fue posible renovar token', 'error');
+      console.log(err.status);
+      return throwError(err);
+    }));
+
   }
 
   estaLogueado() {

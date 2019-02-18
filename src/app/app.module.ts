@@ -4,13 +4,11 @@ import { NgModule } from '@angular/core';
 // Rutas
 import { APP_ROUTES } from './app.routes';
 
-// Modulos
-import { PagesModules } from './pages/pages.module';
-
 // Componentes
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
+import { PagesComponent } from './pages/pages.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -21,21 +19,25 @@ import { ServiceModule } from './services/service.module';
 // Pipe Module
 import { PipesModule } from './pipes/pipes.module';
 
+// Modules
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
-    PagesModules,
     FormsModule,
     ReactiveFormsModule,
     ServiceModule,
-    PipesModule
+    PipesModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
